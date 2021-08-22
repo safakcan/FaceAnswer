@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizTableViewCell" rowHeight="278" id="KGk-i7-Jjw" customClass="QuizTableViewCell" customModule="FaceAnswer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="523" height="278"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="523" height="278"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYj-z1-Rqr">
+                        <rect key="frame" x="10" y="10" width="503" height="258"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q3H-ye-0lq">
+                                <rect key="frame" x="10" y="10" width="483" height="238"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecN-dx-fKO">
+                                        <rect key="frame" x="0.0" y="0.0" width="483" height="114"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vei-bY-eyq">
+                                        <rect key="frame" x="0.0" y="124" width="483" height="114"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-nv-d3P">
+                                                <rect key="frame" x="0.0" y="0.0" width="483" height="27"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9l-m7-fSa">
+                                                <rect key="frame" x="0.0" y="29" width="483" height="27"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ac-hm-N1Y">
+                                                <rect key="frame" x="0.0" y="58" width="483" height="27"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcX-Pg-xtG">
+                                                <rect key="frame" x="0.0" y="87" width="483" height="27"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="q3H-ye-0lq" secondAttribute="trailing" constant="10" id="HAl-CX-8hD"/>
+                            <constraint firstAttribute="bottom" secondItem="q3H-ye-0lq" secondAttribute="bottom" constant="10" id="OXl-Uo-2WO"/>
+                            <constraint firstItem="q3H-ye-0lq" firstAttribute="top" secondItem="ZYj-z1-Rqr" secondAttribute="top" constant="10" id="abw-f7-Kye"/>
+                            <constraint firstItem="q3H-ye-0lq" firstAttribute="leading" secondItem="ZYj-z1-Rqr" secondAttribute="leading" constant="10" id="gvW-tD-8c4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="ZYj-z1-Rqr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="YRS-aT-mDy"/>
+                    <constraint firstAttribute="trailing" secondItem="ZYj-z1-Rqr" secondAttribute="trailing" constant="10" id="Yof-Sy-Xza"/>
+                    <constraint firstAttribute="bottom" secondItem="ZYj-z1-Rqr" secondAttribute="bottom" constant="10" id="e3j-jf-xyi"/>
+                    <constraint firstItem="ZYj-z1-Rqr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jo0-3H-FRa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="ZYj-z1-Rqr" id="kYp-iC-vle"/>
+                <outlet property="questionLabel" destination="ecN-dx-fKO" id="cCF-iH-Qlr"/>
+                <outletCollection property="answerButtonCollection" destination="EsN-nv-d3P" collectionClass="NSMutableArray" id="aEA-IF-7L9"/>
+                <outletCollection property="answerButtonCollection" destination="B9l-m7-fSa" collectionClass="NSMutableArray" id="oxQ-eJ-0zM"/>
+                <outletCollection property="answerButtonCollection" destination="2Ac-hm-N1Y" collectionClass="NSMutableArray" id="YxX-0d-6B7"/>
+                <outletCollection property="answerButtonCollection" destination="rcX-Pg-xtG" collectionClass="NSMutableArray" id="VJg-iT-6CN"/>
+            </connections>
+            <point key="canvasLocation" x="278.98550724637681" y="131.25"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
