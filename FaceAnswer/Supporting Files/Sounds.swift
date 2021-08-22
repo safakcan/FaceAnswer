@@ -11,8 +11,8 @@ import  AVFoundation
 class Sounds {
     static var shared = Sounds()
     
-    let correctAnswerSound = URL(fileURLWithPath: Bundle.main.path(forResource: "correct", ofType: "mp3") ?? "")
-    let wrongAnswerSound = URL(fileURLWithPath: Bundle.main.path(forResource: "wrong", ofType: "mp3") ?? "")
+    let correctAnswerSound = URL(fileURLWithPath: Bundle.main.path(forResource: "correct-answer", ofType: "wav") ?? "")
+    let wrongAnswerSound = URL(fileURLWithPath: Bundle.main.path(forResource: "wrong-answer", ofType: "wav") ?? "")
     var audioPlayer = AVAudioPlayer()
     
     

@@ -22,8 +22,13 @@ class QuizTableViewCell: UITableViewCell {
     
     func configureUI() {
         containerView.layer.cornerRadius = 5
+        questionLabel.font = UIFont(name: "HoeflerText-Black" , size: 20)
         for button in answerButtonCollection {
             button.backgroundColor = .white
+            button.titleLabel?.font = UIFont(name: "HoeflerText-Black" , size: 15)
+            button.titleLabel?.tintColor = UIColor(red: 2/255, green: 96/255, blue: 130/255, alpha: 1.0)
+            button.layer.borderColor = UIColor.white.cgColor
+            button.layer.cornerRadius = 5
         }
     }
     func configure(with model: QuizModel) {

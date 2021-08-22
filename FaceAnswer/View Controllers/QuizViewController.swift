@@ -21,10 +21,12 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        countdownLabel.font = UIFont(name: "HoeflerText-Black" , size: 20)
         quizQuestion = quizArray.first
         tableView.register(QuizTableViewCell.nib(), forCellReuseIdentifier: QuizTableViewCell.identifier)
         tableView.backgroundColor = .black
         restartTimer()
+        startCounterAnimation()
     }
     
     @objc func didTapMyButton(sender:UIButton!) {
@@ -49,10 +51,12 @@ class QuizViewController: UIViewController {
         tableView.isUserInteractionEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.restartTimer()
+            self.view.backgroundColor = .white
             if let found = self.quizArray.firstIndex(where: {$0.question == self.quizQuestion?.question}), found < self.quizArray.count-1 {
                 self.quizQuestion = self.quizArray[found + 1]
                 self.tableView.reloadData()
                 self.tableView.isUserInteractionEnabled = true
+                self.startCounterAnimation()
             }
             else {
                 self.timer?.invalidate()
@@ -71,6 +75,7 @@ class QuizViewController: UIViewController {
         if counter > -1 {
             countdownLabel.text = String(counter)
             counter -= 1
+            
         }
         if counter == -1 {
             timer?.invalidate()
@@ -83,6 +88,12 @@ class QuizViewController: UIViewController {
     func restartTimer() {
         self.counter = 24
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+    
+    func startCounterAnimation() {
+        UIView.animate(withDuration: TimeInterval(self.counter), delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: { () -> Void in
+            self.view.backgroundColor =  .red
+                })
     }
     
     func pushToHighScoreViewController() {

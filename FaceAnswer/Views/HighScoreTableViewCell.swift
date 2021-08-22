@@ -14,6 +14,7 @@ class HighScoreTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        configureUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,9 +27,14 @@ class HighScoreTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-     //
+        nameLabel.font = UIFont(name: "HoeflerText-Black" , size: 20)
+        scoreLabel.font = UIFont(name: "HoeflerText-Black" , size: 20)
     }
+    
     func configure(with model: UserModel,index: Int) {
+        if model.username == TempUserModel.shared.tempUsername {
+            self.backgroundColor = .orange
+        }
         nameLabel.text = String(index) + ". " + model.username
         scoreLabel.text = model.score
     }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     var categoryPickerData: [String] = []
     var selectedDifficulty: String = ""
     var selectedCategory: String = ""
+    @IBOutlet weak var nextpageButton: UIButton!
     
     @IBAction func startQuizButton(_ sender: UIButton) {
         fetchQuizData()
@@ -22,10 +23,24 @@ class HomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         difficultyPickerData = [difficultyType.Easy.rawValue,difficultyType.Medium.rawValue,difficultyType.Hard.rawValue,difficultyType.Mixed.rawValue]
         categoryPickerData = [categoryType.Mixed.rawValue,categoryType.General_Knowledge.rawValue,categoryType.Video_Games.rawValue,categoryType.Sports.rawValue,categoryType.History.rawValue,categoryType.Computers.rawValue]
     }
-    
+
+    func configureUI(){
+        nextpageButton.titleLabel?.font = UIFont(name: "HoeflerText-Black" , size: 15)
+        nextpageButton.setTitle("NEXT", for: .normal)
+        nextpageButton.titleLabel?.tintColor = .black
+        nextpageButton.backgroundColor = UIColor(red: 2/255, green: 96/255, blue: 130/255, alpha: 1.0)
+        nextpageButton.layer.borderColor = UIColor.white.cgColor
+        nextpageButton.layer.cornerRadius = 5
+    }
     
     func fetchQuizData() {
         let difficulty = getDifficultyEnum(for: difficultyType(rawValue: selectedDifficulty) ?? .Mixed)

@@ -11,6 +11,8 @@
 		8318F25A26D2C2070020CB2C /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8318F25826D2C2070020CB2C /* HighScoreTableViewCell.swift */; };
 		8318F25B26D2C2070020CB2C /* HighScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8318F25926D2C2070020CB2C /* HighScoreTableViewCell.xib */; };
 		8318F25D26D2CF740020CB2C /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8318F25C26D2CF740020CB2C /* Sounds.swift */; };
+		8318F26026D315860020CB2C /* correct-answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8318F25E26D315850020CB2C /* correct-answer.wav */; };
+		8318F26126D315860020CB2C /* wrong-answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8318F25F26D315850020CB2C /* wrong-answer.wav */; };
 		835C14C326CE9FA8006157DC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C14C226CE9FA8006157DC /* UserModel.swift */; };
 		835C14C526D27959006157DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835C14C426D27959006157DC /* GoogleService-Info.plist */; };
 		835C14C726D290CB006157DC /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C14C626D290CB006157DC /* HighScoreViewController.swift */; };
@@ -33,6 +35,8 @@
 		8318F25826D2C2070020CB2C /* HighScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewCell.swift; sourceTree = "<group>"; };
 		8318F25926D2C2070020CB2C /* HighScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighScoreTableViewCell.xib; sourceTree = "<group>"; };
 		8318F25C26D2CF740020CB2C /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		8318F25E26D315850020CB2C /* correct-answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "correct-answer.wav"; sourceTree = "<group>"; };
+		8318F25F26D315850020CB2C /* wrong-answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "wrong-answer.wav"; sourceTree = "<group>"; };
 		835C14C226CE9FA8006157DC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		835C14C426D27959006157DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		835C14C626D290CB006157DC /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		83DFADAD26C957220025BBD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8318F25E26D315850020CB2C /* correct-answer.wav */,
+				8318F25F26D315850020CB2C /* wrong-answer.wav */,
 				83DFADA126C956DF0025BBD5 /* Assets.xcassets */,
 				8318F25C26D2CF740020CB2C /* Sounds.swift */,
 			);
@@ -140,8 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				83DFAD9C26C956DD0025BBD5 /* OnboardViewController.swift */,
-				83DFADAF26C96A9C0025BBD5 /* QuizViewController.swift */,
 				83DFADC326CACC610025BBD5 /* HomeViewController.swift */,
+				83DFADAF26C96A9C0025BBD5 /* QuizViewController.swift */,
 				835C14C626D290CB006157DC /* HighScoreViewController.swift */,
 			);
 			path = "View Controllers";
@@ -236,9 +242,11 @@
 			files = (
 				8318F25B26D2C2070020CB2C /* HighScoreTableViewCell.xib in Resources */,
 				83DFADBC26C9831D0025BBD5 /* QuizTableViewCell.xib in Resources */,
+				8318F26026D315860020CB2C /* correct-answer.wav in Resources */,
 				83DFADA526C956DF0025BBD5 /* LaunchScreen.storyboard in Resources */,
 				835C14C526D27959006157DC /* GoogleService-Info.plist in Resources */,
 				83DFADA226C956DF0025BBD5 /* Assets.xcassets in Resources */,
+				8318F26126D315860020CB2C /* wrong-answer.wav in Resources */,
 				83DFADA026C956DD0025BBD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

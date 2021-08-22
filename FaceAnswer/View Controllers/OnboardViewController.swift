@@ -10,15 +10,51 @@ import FirebaseFirestore
 
 class OnboardViewController: UIViewController {
     let database = Firestore.firestore()
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nextpageButton: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-       
+        nameTextField.delegate = self
+        nameTextField.becomeFirstResponder()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        configureOutlets()
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @IBAction func pushToHomeAction(_ sender: UIButton) {
-        TempUserModel.shared.tempUsername = "safak23"
+        if nameTextField.text?.count ?? 0 > 2 {
+        TempUserModel.shared.tempUsername = nameTextField.text
         pushToHomeViewController()
+        }
+    }
+    
+    func configureOutlets() {
+        
+        self.view.backgroundColor = .opaqueSeparator
+        
+        titleLabel.text = "Face Answer"
+        titleLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: 30)
+        titleLabel.textColor = .black
+        
+        nextpageButton.titleLabel?.font = UIFont(name: "HoeflerText-Black" , size: 15)
+        nextpageButton.setTitle("NEXT", for: .normal)
+        nextpageButton.titleLabel?.tintColor = .black
+        nextpageButton.backgroundColor = UIColor(red: 2/255, green: 96/255, blue: 130/255, alpha: 1.0)
+        nextpageButton.layer.borderColor = UIColor.white.cgColor
+        nextpageButton.layer.cornerRadius = 5
+        
+        nameTextField.backgroundColor = .black
+        nameTextField.borderStyle = .roundedRect
+        nameTextField.attributedPlaceholder =
+        NSAttributedString(string: "Enter a name...(more than 2 caracters)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        nameTextField.textColor = .white
     }
     
     func pushToHomeViewController() {
@@ -26,27 +62,17 @@ class OnboardViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: "HomeViewController") as HomeViewController
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+}
+
+extension OnboardViewController: UITextFieldDelegate {
     
-//    func writeData() {
-//        let collection = database.collection("HighScore")
-//        collection.addDocument(data: ["name": "qwe","score": "789"])
-//        collection.addDocument(data: ["name": "asd","score": "789"])
-//        collection.addDocument(data: ["name": "zxc","score": "789"])
-//        collection.addDocument(data: ["name": "dfg","score": "789"])
-       // collection.addDocument(data: <#T##[String : Any]#>)
-//        docRef.collection("list").addDocument(data: ["asd":["name": "qwe","score": "789"]])
-//        docRef.collection("list").addDocument(data: ["asd":["name": "qwe","score": "123"]])
-//        docRef.collection("list").addDocument(data: ["asd":["name": "qwe","score": "456"]])
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if !string.canBeConverted(to: String.Encoding.ascii){
+                return false
+            }
+         guard let text = textField.text else { return true }
+         let newLength = text.count + string.count - range.length
+         return newLength <= 15
     }
-
-//    func getData() {
-//        let collection = database.collection("HighScore")
-//        collection.getDocuments(completion: { snap,error in
-//            guard let data = snap?.documents else {return}
-//            for d in data {
-//                print(d.data())
-//            }
-//        })
-//    }
-
+}
 

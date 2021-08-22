@@ -17,18 +17,12 @@ class HighScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scoreLabel.text = "High Score"
+        scoreLabel.font = UIFont(name: "HoeflerText-Black" , size: 30)
         tableView.register(HighScoreTableViewCell.nib(), forCellReuseIdentifier: HighScoreTableViewCell.identifier)
         fetchHighScoreList()
         // Do any additional setup after loading the view.
     }
-    
-//    func createUserList() {
-//        for item in self.highScoreList {
-//            let user = UserModel(username: item["name"] as! String, score: item["score"] as! String )
-//            userList?.append(user)
-//        }
-//
-//    }
     
     func fetchHighScoreList() {
         session.readDataFromDB { result, error in
